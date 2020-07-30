@@ -375,7 +375,7 @@ class SS13Status(commands.Cog):
 
             embed=discord.Embed(color=0x26eaea)
             embed.add_field(name="Map", value=mapname, inline=True)
-            /*
+            """
             embed.add_field(name="Security Level", value=str.title(*data['security_level']), inline=True)
 
             if  "shuttle_mode" in data:
@@ -385,7 +385,7 @@ class SS13Status(commands.Cog):
                     embed.add_field(name="Shuttle Timer", value=time.strftime('%M:%S', time.gmtime(int(*data['shuttle_timer']))), inline=True)
             else:
                 embed.add_field(name="Shuttle Status", value="Refueling", inline=True)
-            */
+            """
             embed.add_field(name="Players", value=players, inline=True)
             embed.add_field(name="Admins", value=int(*data['admins']), inline=True)
             embed.add_field(name="Round Duration", value=duration, inline=True)
