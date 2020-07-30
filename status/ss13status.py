@@ -374,7 +374,7 @@ class SS13Status(commands.Cog):
             #Might make the embed configurable at a later date
 
             embed=discord.Embed(color=0x26eaea)
-            embed.add_field(name="Map", value=mapname, inline=True)
+            embed.add_field(name="Map", value=mapname, inline=False)
             """
             embed.add_field(name="Security Level", value=str.title(*data['security_level']), inline=True)
 
@@ -386,10 +386,10 @@ class SS13Status(commands.Cog):
             else:
                 embed.add_field(name="Shuttle Status", value="Refueling", inline=True)
             """
-            embed.add_field(name="Players", value=players, inline=True)
-            embed.add_field(name="Admins", value=int(*data['admins']), inline=True)
-            embed.add_field(name="Round Duration", value=duration, inline=True)
-            embed.add_field(name="Server Link:", value=f"{server_url}", inline=False)
+            embed.add_field(name="Players", value=players, inline=False)
+            embed.add_field(name="Admins", value=int(*data['admins']), inline=False)
+            embed.add_field(name="Round Duration", value=duration, inline=False)
+            embed.add_field(name="Server Link:", value=f"<{server_url}>", inline=False)
 
             try:
                 await self.statusmsg.delete()
