@@ -589,9 +589,9 @@ class SS13Status(commands.Cog):
                     status = await self.query_server(server, port)
                     if status is not None:
                         duration = str.title(*status['roundduration'])
-                        topic = f"Server info for {await self.config.server_url()}: Players: {status['players'][0]} | Map: {str.title(*status['stationname'])} | Round Duration: {duration}"
+                        topic = f"Server info for <{await self.config.server_url()}>: Players: {status['players'][0]} | Map: {str.title(*status['stationname'])} | Round Duration: {duration}"
                     else:
-                        topic = f"Server info for {await self.config.server_url()}: Offline" 
+                        topic = f"Server info for <{await self.config.server_url()}>: Offline" 
 
                     await channel.edit(topic=topic)
 
