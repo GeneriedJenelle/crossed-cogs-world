@@ -364,8 +364,7 @@ class SS13Status(commands.Cog):
 
         else:
             #Reported time is in seconds, we need to convert that to be easily understood
-            duration = int(*data['roundduration'])
-            duration = time.strftime('%H:%M', time.gmtime(duration))
+            duration = str.title(*data['roundduration'])
             #Players also includes the number of admins, so we need to do some quick math
             players = (int(*data['players']) - int(*data['admins'])) 
             #Format long map names
