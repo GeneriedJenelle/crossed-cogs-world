@@ -368,14 +368,16 @@ class SS13Status(commands.Cog):
             #Players also includes the number of admins, so we need to do some quick math
             players = (int(*data['players']) - int(*data['admins'])) 
             #Format long map names
-            mapname = str.title(*data['map_name'])
+            mapname = str.title(*data['stationname'])
             mapname = '\n'.join(textwrap.wrap(mapname,25))
 
             #Might make the embed configurable at a later date
 
             embed=discord.Embed(color=0x26eaea)
             embed.add_field(name="Map", value=mapname, inline=True)
+            /*
             embed.add_field(name="Security Level", value=str.title(*data['security_level']), inline=True)
+
             if  "shuttle_mode" in data:
                 if ("docked" or "call") not in data['shuttle_mode']:
                     embed.add_field(name="Shuttle Status", value=str.title(*data['shuttle_mode']), inline=True)
@@ -383,6 +385,7 @@ class SS13Status(commands.Cog):
                     embed.add_field(name="Shuttle Timer", value=time.strftime('%M:%S', time.gmtime(int(*data['shuttle_timer']))), inline=True)
             else:
                 embed.add_field(name="Shuttle Status", value="Refueling", inline=True)
+            */
             embed.add_field(name="Players", value=players, inline=True)
             embed.add_field(name="Admins", value=int(*data['admins']), inline=True)
             embed.add_field(name="Round Duration", value=duration, inline=True)
